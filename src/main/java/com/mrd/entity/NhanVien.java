@@ -1,16 +1,11 @@
 package com.mrd.entity;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
-@Entity(name="NhanVien")
+@Entity(name="nhanvien")
 public class NhanVien {
 	
 	@Id
@@ -19,21 +14,6 @@ public class NhanVien {
 	String tenNhanVien;
 	int tuoi;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="idNhanVien")
-	Set<SanPham> sanPhams;
-
-	
-	public Set<SanPham> getSanPhams() {
-		return sanPhams;
-	}
-
-
-	public void setSanPhams(Set<SanPham> sanPhams) {
-		this.sanPhams = sanPhams;
-	}
-
-
 	public NhanVien(String tenNhanVien, int tuoi) {
 		this.tenNhanVien = tenNhanVien;
 		this.tuoi = tuoi;
